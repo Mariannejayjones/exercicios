@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>includes</h1>
+    </header>
+    <script>
+
+        const includesWorld = "Hello world" .includes('World')
+        const includesHello = "Hello world" .includes('Hello')
+        const includesOk = "Hello world" .includes('Ok')
+
+        console.log(includesWorld)
+        console.log(includesHello)
+        console.log(includesOk)
+
+        function includes(string, searchValue){
+            let matchCount = 0
+
+            for (const char of string){
+                if (char === searchValue[matchCount]){
+                  matchCount++
+
+                  if(matchCount === searchValue.length){
+                    return true
+                  }
+                } else{
+                  matchCount = 0
+
+                  if (char === searchValue[matchCount]){
+                  matchCount++
+                  }
+                }
+            }
+
+            
+
+            return false
+
+        } //if the character withing string (letter within word) is the same it will return True - if not it will return false
+    
+
+        console.log(includes('Hello World', 'World'))
+        console.log(includes('Hello World', 'Hello'))
+        console.log(includes('Hello world', 'Ok'))
+        console.log(includes('Hello world pka', 'Wow'))    
+
+
+    </script>
+</body>
+</html>
